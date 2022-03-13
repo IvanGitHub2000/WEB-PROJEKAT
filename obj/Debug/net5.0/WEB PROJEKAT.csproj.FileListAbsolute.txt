@@ -1,0 +1,61 @@
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\appsettings.json
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\WEB PROJEKAT.exe
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\WEB PROJEKAT.deps.json
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\WEB PROJEKAT.runtimeconfig.json
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\WEB PROJEKAT.runtimeconfig.dev.json
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\WEB PROJEKAT.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\ref\WEB PROJEKAT.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\WEB PROJEKAT.pdb
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.csprojAssemblyReference.cache
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.AssemblyInfoInputs.cache
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.AssemblyInfo.cs
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\staticwebassets\WEB PROJEKAT.StaticWebAssets.Manifest.cache
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\staticwebassets\WEB PROJEKAT.StaticWebAssets.xml
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\scopedcss\bundle\WEB PROJEKAT.styles.css
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.RazorTargetAssemblyInfo.cache
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.csproj.CopyComplete
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\ref\WEB PROJEKAT.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.pdb
+C:\Users\Ivan\Desktop\WEB PROJEKAT\obj\Debug\net5.0\WEB PROJEKAT.genruntimeconfig.cache
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Humanizer.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Ivan\Desktop\WEB PROJEKAT\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
