@@ -30,6 +30,7 @@ public bool PotrebnaCovidPropusnica { get; set; }
 [JsonIgnore]
 public List<Borba> Borbe{get;set;}
 
+
 public Organizacija Organizacija {get;set;}
 
 

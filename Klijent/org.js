@@ -585,14 +585,14 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
        
 
         
-        let btnVrati = document.createElement("button");
-        btnVrati.innerHTML = "Vrati na pocetnu";
-        btnVrati.onclick = (ev) => this.crtaj1(document.body);
-        host1.appendChild(btnVrati);
+        // let btnVrati = document.createElement("button");
+        // btnVrati.innerHTML = "Vrati na pocetnu";
+        // btnVrati.onclick = (ev) => this.crtaj1(document.body);
+        // host1.appendChild(btnVrati);
  
+        this.crtajFormuObrisiOrganizaciju(host1);
         this.crtajFormuDodajOrganizaciju(host1);
        
-        this.crtajFormuObrisiOrganizaciju(host1);
         
         this.crtajFormuPomoc(host1);
     }
@@ -890,34 +890,40 @@ KategorijaBorca(kat)
 crtajFormuPomoc(host)
 {
     
-   
-   let red = this.crtajRed(host);
+    let red = this.crtajRed(host);
+    
     let header = document.createElement("h1");
     header.innerHTML = "Pomoc";
     red.appendChild(header);
-
-let l1=document.createElement("label");
+    
+    let l1=document.createElement("label");
     l1.innerHTML = "Izaberi organizaciju";
     red.appendChild(l1);
-
+    
     let selectOrg = document.createElement("select");
     selectOrg.className = "selectOrganizaciju";
     red.appendChild(selectOrg);
-
+    
     let opcije;
     this.listaOrganizacija.forEach(p => {
         opcije = document.createElement("option");
         opcije.innerHTML = p.ime;
         opcije.value = p.ime;
         selectOrg.appendChild(opcije);
-
+        
     })
-//
+    //
     let btnNadji = document.createElement("button");
     btnNadji.innerHTML = "Pomogni organizaciji sredstvima";
+    btnNadji.className="dugmence";
     btnNadji.onclick = (ev) => this.PruziPomoc();
     red.appendChild(btnNadji);
-
+    
+    let btnVrati = document.createElement("button");
+    btnVrati.className="dugmence1";
+        btnVrati.innerHTML = "Vrati na pocetnu";
+        btnVrati.onclick = (ev) => this.crtaj1(document.body);
+        red.appendChild(btnVrati);
 
 
 }
@@ -1035,7 +1041,8 @@ crtajFormuObrisiOrganizaciju(host)
     let red = this.crtajRed(host);
 
     let header = document.createElement("h1");
-    header.innerHTML = "Uneti ime organizacije za proveru";
+    header.innerHTML = "Uneti ime organizacije";
+    header.className="jedinica";
     red.appendChild(header);
 
     let l = document.createElement("label");
@@ -1047,6 +1054,7 @@ crtajFormuObrisiOrganizaciju(host)
     red.appendChild(inputNaziv);
 
     let btnProvera = document.createElement("button");
+    btnProvera.className="dugmence";
         btnProvera.innerHTML = "Izvrsi proveru";
         btnProvera.onclick = (ev) => this.ProveriOrganizaciju(inputNaziv.value);
         red.appendChild(btnProvera);
@@ -1089,12 +1097,13 @@ crtajFormuDodajOrganizaciju(host)
        
        red.appendChild(l);
         let inputVrednost = document.createElement("input");
-        inputVrednost.className="in3"
+        inputVrednost.className="in3";
      
         inputVrednost.type = "number";
         red.appendChild(inputVrednost);
         
         let btnDodaj = document.createElement("button");
+        btnDodaj.className="dugmence";
         btnDodaj.innerHTML = "Dodaj";
        
         btnDodaj.onclick = (ev) => this.DodajOrganizaciju(inputNaziv.value, inputOsnivac.value,inputVrednost.value);
@@ -1845,7 +1854,7 @@ ProveriOrganizaciju(naziv)
             }
             if(s.status==404 || s.status==400)
             {
-                alert("Organizacija ima dovoljno novca");
+                alert("Organizacija ne postoji!!!");
             }
 
         }

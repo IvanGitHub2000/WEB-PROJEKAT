@@ -36,5 +36,6 @@ namespace Models
         public List<Borac> Borci{get;set;}
 
        public Arena Arena{get;set;}
+     
     }
 }

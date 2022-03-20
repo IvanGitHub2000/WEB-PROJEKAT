@@ -42,6 +42,53 @@ button{
     /*background: cadetblue;*/
     background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(17, 153, 243, 0.966) 0%, rgb(28, 7, 104) 100.2% );
 }
+.dugmence
+{
+    width: 325px;
+    
+        /*  order: 0;*/
+          position: relative;
+          display:inline-flex;
+          padding: 12px 16px;
+        
+          margin-top: 15px;
+          margin-bottom: 15px;
+          color:gold;
+          text-decoration: aqua;
+          text-transform: uppercase;
+          /*align-items: flex-end;*/
+          align-content: space-around;
+          text-align: center;
+          font-size: 18px;
+          letter-spacing: 2px;
+          border-radius: 40px;
+          /*background: cadetblue;*/
+          background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(17, 153, 243, 0.966) 0%, rgb(28, 7, 104) 100.2% );
+      
+}
+.dugmence1
+{
+    width: 300px;
+    text-align: center;
+        /*  order: 0;*/
+          position: relative;
+          display:inline-flex;
+          padding: 12px 16px;
+        
+          margin-top: 155px;
+          margin-bottom: 15px;
+          color:gold;
+          text-decoration: aqua;
+          text-transform: uppercase;
+          /*align-items: flex-end;*/
+          align-content: space-around;
+          font-size: 18px;
+          letter-spacing: 2px;
+          border-radius: 40px;
+          /*background: cadetblue;*/
+          background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(17, 209, 243, 0.966) 0%, rgb(22, 50, 206) 100.2% );
+         
+}
 h1
 {/*order: 1;*/
     color: gold;
@@ -51,6 +98,16 @@ h1
     padding:  12px 16px;
     background-image: linear-gradient(21deg, #0413a1, #1beabd);
     margin-bottom: 30px;
+}
+.jedinica
+{ color: gold;
+    font-style: oblique;
+    border: 1px solid #3b8ffd;
+    border-radius: 20px;
+    padding:  12px 16px;
+    background-image: linear-gradient(21deg, #0413a1, #1beabd);
+    
+
 }
 
 /*.Input
@@ -293,7 +350,7 @@ label
     background-color: #5810ff;
     margin-bottom:  10px;
 }
-.in1,.in2,.in3,.in4,.in5,.Input{
+.in1,.in2,.in3,.in4,.in5{
    /* order: 2;*/
     background: linear-gradient(21deg, #10c7ff, #1b75ea);
     padding: 15px;
@@ -303,9 +360,21 @@ label
     border: 10px;
     color: gold;
     justify-self: flex-start;
+    max-width: 325px;
     
     
     
+}
+.Input{
+    background: linear-gradient(21deg, #10c7ff, #1b75ea);
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    border: 10px;
+    color: gold;
+    justify-self: flex-start;
+
 }
 
 .red{
