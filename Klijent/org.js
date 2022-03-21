@@ -113,7 +113,7 @@ crtaj1(host){
         
         
             let dugme=document.createElement("button");
-            dugme.innerHTML="dugme Grafik";
+            dugme.innerHTML="Dugme Grafik";
             dugme.className="dugmeGrafik";
             dugme.onclick=(ev)=>this.Grafikon(host1);
             host1.appendChild(dugme);
@@ -222,9 +222,9 @@ CrtajGrafike(izabrano,host1)
                         title: {
                           font: {
                             /*size: 40,*/
-                            weight: "bold"
+                           // weight: "bold"
                           },
-                          color: 'gold'
+                          //color: 'gold'
                         },
                 
                        /* ticks: {
@@ -315,9 +315,9 @@ CrtajGrafike(izabrano,host1)
                         title: {
                           font: {
                             /*size: 40,*/
-                            weight: "bold"
+                           // weight: "bold"
                           },
-                          color: 'gold'
+                         // color: 'gold'
                         },
                 
                        /* ticks: {
@@ -428,9 +428,9 @@ CrtajGrafike(izabrano,host1)
                         title: {
                           font: {
                             /*size: 40,*/
-                            weight: "bold"
+                           // weight: "bold"
                           },
-                          color: 'gold'
+                        //  color: 'gold'
                         },
                 
                        /* ticks: {
@@ -540,9 +540,9 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
                     title: {
                       font: {
                         /*size: 40,*/
-                        weight: "bold"
+                        //weight: "bold"
                       },
-                      color: 'gold'
+                     // color: 'gold'
                     },
             
                    /* ticks: {
@@ -674,7 +674,7 @@ nadjiGubitnike()
                            // this.nadjiGubitnike(pobednik);
             let borci1=this.kont.querySelectorAll("input[type='checkbox']:checked");
             if(borci1===null){
-              alert("Izaberi neku arenua");
+              alert("Izaberi nekog borca");
                   return;
                 }
              let nizPobednika="";
@@ -1301,10 +1301,10 @@ crtajArene(host)
         var zag = ["ArenaID", "Ime","Drzava","Kapacitet"];
         zag.forEach(el => {
             th = document.createElement("th");
-            if(el.type==Number)
-            {   var one=el.id;
+            
+              var one=el.id;
                 th.innerHTML=one;
-            }
+            
             th.innerHTML = el;
             tr.appendChild(th);
         })
@@ -1460,7 +1460,7 @@ nadjiBorbe()
     this.ucitajBorbe(nagradaB)
 }
 crtajFormuArena(host)
-{//zeli da pravi spektakl i sef ubacuje koje sve arene moze da iskoristi
+{
     var host1=this.refreshArena(host);
    
 let btnVrati = document.createElement("button");
@@ -1558,7 +1558,7 @@ PromeniCovid(ime)
                         else{
                             if(s.status==400 || s.status==404)
                             {
-                                alert("Greska!!! Odabrali ste nepostojecu arenu!!!");
+                                alert("Greska!!! Odabrana arena vec ima svoju COVID politiku!!!");
                             }
                         }
                         })
@@ -1728,7 +1728,7 @@ dodajBorca(ime,prezime,kategorija,knockoutRatio,brojPobeda,brojPoraza,ranking)
             }
             if(s.status==404 || s.status==400)
             {
-                alert("Los unos!");
+                alert("Takav borac ne postoji!");
             }
 
         }

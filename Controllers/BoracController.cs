@@ -235,7 +235,7 @@ catch(Exception e)
     }
     #endregion
 
-      #region get_borca_by_id
+      #region get_borca_by_kat
 [Route("PreuzmiBorcaByKat/{kat}")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiBorcaByKat(string kat)

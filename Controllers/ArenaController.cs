@@ -61,7 +61,7 @@ namespace WEB_PROJEKAT.Controllers
         }
             #endregion
         
-         #region IZMENI_ARENU
+         #region ODSTAMPAJ_REAL_ARENU
             [Route("PreuzmiArenice/{kap}")]
             [HttpPut]
           public async Task<ActionResult> PreuzmiArenice(string kap)
@@ -221,7 +221,7 @@ catch(Exception e)
     #endregion
  
   #region IZMENI_ARENU_COVID
-            [Route("IzmeniArenuCovid/{ime}")]//sa select box dobijas info o ovome
+            [Route("IzmeniArenuCovid/{ime}")]
             [HttpPut]
           public async Task<ActionResult> IzmeniArenuCovid(string ime)
           {

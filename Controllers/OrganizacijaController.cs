@@ -118,7 +118,7 @@ namespace WEB_PROJEKAT.Controllers
 
            if(naziv.Length>50 || string.IsNullOrWhiteSpace(naziv))
             {
-                return BadRequest("Greska kod prosledjivanja imena kompanije koja je bankrotirala!!!");//razmisli i o bankrotiranju
+                return BadRequest("Greska kod prosledjivanja imena kompanije koja je bankrotirala!!!");
             }
 
              try
@@ -285,7 +285,7 @@ return Ok(sve.VrednostOrganizacijeUMilionimaDolara);
        #endregion
 
 #region POMOGNI_ORGANIZACIJAMA
-            [Route("PomocOrganizacijama/{ime}")]//sa select box dobijas info o ovome
+            [Route("PomocOrganizacijama/{ime}")]
             [HttpPut]
           public async Task<ActionResult> PomocOrganizacijama(string ime)
           {
