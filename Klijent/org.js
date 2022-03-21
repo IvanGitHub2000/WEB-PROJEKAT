@@ -24,7 +24,7 @@ crtaj1(host){
   }
         let nesto=document.querySelector(".FormaStubici1");
         console.log(nesto);
-        //  nesto.remove();
+        
         nesto.style.display="none";
             
         this.kont=document.createElement("div");
@@ -92,10 +92,10 @@ crtaj1(host){
         host1.appendChild(btnVrati);
 
         
-
         let selectGrafik = document.createElement("select");
         selectGrafik.className = "selectGrafik";
         host1.appendChild(selectGrafik);
+
 
         let nizGrafika=["Statistika Organizacija","Statistika Arena","Statistika Borbi","Statistika Boraca"];
 
@@ -112,8 +112,6 @@ crtaj1(host){
         })
         
         
-        
-            
             let dugme=document.createElement("button");
             dugme.innerHTML="dugme Grafik";
             dugme.className="dugmeGrafik";
@@ -172,7 +170,6 @@ CrtajGrafike(izabrano,host1)
         {if(s.ok)
             {
                 
-                
                     s.json().then(data=>
                         {
                             data.forEach(p=>{
@@ -184,8 +181,6 @@ CrtajGrafike(izabrano,host1)
                         )
                     }
                     )
-                    
-                    
                     
                 }
             })
@@ -266,8 +261,7 @@ CrtajGrafike(izabrano,host1)
     
     }).then(s=>
         {if(s.ok)
-            {
-                
+            {  
                 
                     s.json().then(data=>
                         {
@@ -279,9 +273,7 @@ CrtajGrafike(izabrano,host1)
                         }
                         )
                     }
-                    )
-                    
-                    
+                    ) 
                     
                 }
             })
@@ -377,8 +369,6 @@ CrtajGrafike(izabrano,host1)
                     }
                     )
                     
-                    
-                    
                 }
             })
            
@@ -386,14 +376,10 @@ CrtajGrafike(izabrano,host1)
                  console.log(vrednosty);
     
 
-                 
-
-
               var nesto1=  new Chart("myChartOrganizacija", {
                     type: "bar",
                     data: {
                     labels: vrednostx,
-                    
                     
                     datasets: [{
                     label:'Grafik Organizacija',
@@ -465,16 +451,13 @@ CrtajGrafike(izabrano,host1)
     }
    refreshStubice1(host)
    {
-         let nesto=host.querySelectorAll(".FormaStubici1");
-       
-        
+            let nesto=host.querySelectorAll(".FormaStubici1");
              host.removeChild(nesto);
          
    }
     refreshStubice(host)
     {      
         this.kont.removeChild(host);
-        
         let forma = document.createElement("div");
         forma.className = "FormaStubici2";
         this.kont.appendChild(forma);
@@ -503,7 +486,6 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
     {if(s.ok)
         {
             
-            
                 s.json().then(data=>
                     {
                         data.forEach(p=>{
@@ -514,15 +496,13 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
                     }
                     )
                 }
-                )
-                
-                
+                )            
                 
             }
         })
         
-            console.log(vrednostx);
-             console.log(vrednosty);
+         console.log(vrednostx);
+         console.log(vrednosty);
 
            var nesto1= new Chart("myChartArena", {
                 type: "bar",
@@ -582,24 +562,14 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
     crtajOrganizacije(host)
     {
         var host1 = this.refreshOrg(host);
-       
-
-        
-        // let btnVrati = document.createElement("button");
-        // btnVrati.innerHTML = "Vrati na pocetnu";
-        // btnVrati.onclick = (ev) => this.crtaj1(document.body);
-        // host1.appendChild(btnVrati);
  
         this.crtajFormuObrisiOrganizaciju(host1);
-        this.crtajFormuDodajOrganizaciju(host1);
-       
-        
+        this.crtajFormuDodajOrganizaciju(host1); 
         this.crtajFormuPomoc(host1);
     }
     crtajBorce(host)
     {
         host = this.refreshBorce(host);
-        
         let btnVrati = document.createElement("button");
         btnVrati.innerHTML = "Vrati na pocetnu";
         btnVrati.onclick = (ev) => this.crtaj1(document.body);
@@ -623,6 +593,7 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
      
         this.crtajFormuBoracKategorija(host);
     }
+
     crtajBorbe12(host)
     {
        var host1 = this.refreshBorbe(host);
@@ -640,10 +611,10 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
         
     }
     crtajFormuGubitnik(host)
-    {
+ {
       
-        let red = this.crtajRed(host);
-        red.className="redBorbe1";
+    let red = this.crtajRed(host);
+    red.className="redBorbe1";
    
 
     let l1=document.createElement("label");
@@ -698,26 +669,26 @@ fetch("https://localhost:5001/Arena/PreuzmiAreneStubic" ,
 nadjiGubitnike()
 {
     let optionel=this.kont.querySelector(".selectArena1");
-                            var id=optionel.options[optionel.selectedIndex].value;
-                            console.log(id);
+             var id=optionel.options[optionel.selectedIndex].value;
+            console.log(id);
                            // this.nadjiGubitnike(pobednik);
-                           let borci1=this.kont.querySelectorAll("input[type='checkbox']:checked");
-                            if(borci1===null){
-                                alert("Izaberi neku arenua");
-                                return;
-                            }
-                            let nizPobednika="";
-                            for(let i=0;i<borci1.length;i++)
-                            {
-                                nizPobednika=nizPobednika.concat(borci1[i].value,",");
-                            }
+            let borci1=this.kont.querySelectorAll("input[type='checkbox']:checked");
+            if(borci1===null){
+              alert("Izaberi neku arenua");
+                  return;
+                }
+             let nizPobednika="";
+            for(let i=0;i<borci1.length;i++)
+            {
+               nizPobednika=nizPobednika.concat(borci1[i].value,",");
+            }
                             
                             
-                            var niz=nizPobednika.substring(0,nizPobednika.length-1);
+            var niz=nizPobednika.substring(0,nizPobednika.length-1);
                             
-                            console.log(niz);
+             console.log(niz);
                             
-                            this.ucitajSve(id,niz);
+           this.ucitajSve(id,niz);
 
 }
 crtajBorbe1(host)
@@ -804,9 +775,6 @@ let l1=document.createElement("label");
     l1.innerHTML = "Ukucaj kategoriju";
     red.appendChild(l1);
 
-   
-//
-
     let inputkat = document.createElement("input");
     inputkat.type = "text";
     inputkat.className="in5";
@@ -815,6 +783,7 @@ let l1=document.createElement("label");
     btnNadji.innerHTML = "Nadji borce";
     btnNadji.onclick = (ev) => this.KategorijaBorca(inputkat.value);
     red.appendChild(btnNadji);
+
 }
 crtajBorcePoKategoriji(host)
 {
@@ -1062,8 +1031,6 @@ crtajFormuObrisiOrganizaciju(host)
 crtajFormuDodajOrganizaciju(host)
 {
     
-
-   
     let red = this.crtajRed(host);
     
     let header = document.createElement("h1");
@@ -1104,7 +1071,7 @@ crtajFormuDodajOrganizaciju(host)
         
         let btnDodaj = document.createElement("button");
         btnDodaj.className="dugmence";
-        btnDodaj.innerHTML = "Dodaj";
+        btnDodaj.innerHTML = "Dodaj novu organizaciju";
        
         btnDodaj.onclick = (ev) => this.DodajOrganizaciju(inputNaziv.value, inputOsnivac.value,inputVrednost.value);
         red.appendChild(btnDodaj);
@@ -1181,7 +1148,7 @@ crtajFormuDodajBorca(host)
    div3.appendChild(inputKategorija);
    red.appendChild(div3);
 
-;
+
    l = document.createElement("label");
    
    l.innerHTML = "KO Ratio:";
@@ -1192,9 +1159,6 @@ crtajFormuDodajBorca(host)
    inputKO.type = "number";
    div4.appendChild(inputKO);
    red.appendChild(div4);
-
-
-
 
 l = document.createElement("label");
 l.innerHTML = "Pobede:";
@@ -1364,9 +1328,6 @@ osveziSadrzajBorci()
     var roditelj = teloTabele.parentNode;
     roditelj.removeChild(teloTabele);
 
-
-    
-
     teloTabele = document.createElement("tbody");
     
     teloTabele.className = "TabelaPodaciBorci";
@@ -1393,9 +1354,6 @@ osveziSadrzajBorci1()
     var teloTabele = this.kont.querySelector(".TabelaPodaciBorci1");
     var roditelj = teloTabele.parentNode;
     roditelj.removeChild(teloTabele);
-
-
-    
 
     teloTabele = document.createElement("tbody");
     
@@ -1452,8 +1410,6 @@ osveziSadrzaj1()
     var roditelj = teloTabele.parentNode;
     roditelj.removeChild(teloTabele);
 
-
-    
 
     teloTabele = document.createElement("tbody");
     
@@ -1692,7 +1648,6 @@ ucitajBorbe(nagradaB)
                 let forma=this.kont.querySelector(".FormaBorbe");
                 this.crtajBorbe(forma);
                 
-                // let red = this.crtajRed(host);
                 
                 let teloTabele= this.osveziSadrzaj();
                 s.json().then(data=>{
@@ -1708,7 +1663,9 @@ ucitajBorbe(nagradaB)
                               
                             })
                         }
-                        else{
+
+                        else
+                        {
                             if(s.status==400 || s.status==404)
                             {
                                 alert("Greska!!!");
@@ -1725,7 +1682,7 @@ dodajBorca(ime,prezime,kategorija,knockoutRatio,brojPobeda,brojPoraza,ranking)
         alert("Unesite ime borca!");
         exit(0);
     }
-    if(prezime===null || prezime===undefined || prezime===""){//posto je string 
+    if(prezime===null || prezime===undefined || prezime===""){
         alert("Unesite prezime borca!");
         exit(0);
     }
@@ -1738,7 +1695,7 @@ dodajBorca(ime,prezime,kategorija,knockoutRatio,brojPobeda,brojPoraza,ranking)
         alert("Unesite KO ratio!");
         exit(0);
     }
-    if(brojPobeda===null || brojPobeda===undefined || brojPobeda===""){//posto je string 
+    if(brojPobeda===null || brojPobeda===undefined || brojPobeda===""){
         alert("Unesite broj pobeda!");
         exit(0);
     }
@@ -1764,9 +1721,9 @@ dodajBorca(ime,prezime,kategorija,knockoutRatio,brojPobeda,brojPoraza,ranking)
         else {
             if (s.status == 202) {
                 s.json().then(data=>{
-                   // console.log(data);
+                   
                     alert("Borac koji ima id " + data +  " postoji u bazi");
-                //    
+                
                 });
             }
             if(s.status==404 || s.status==400)
@@ -1788,7 +1745,7 @@ DodajOrganizaciju(naziv,osnivac,vrednost)
         alert("Unesite naziv organizacije!");
         exit(0);
     }
-    if(osnivac===null || osnivac===undefined || osnivac===""){//posto je string 
+    if(osnivac===null || osnivac===undefined || osnivac===""){
         alert("Unesite osnivaca organizacije!");
         exit(0);
     }
@@ -1810,7 +1767,7 @@ DodajOrganizaciju(naziv,osnivac,vrednost)
         else {
             if (s.status == 202) {
                 s.json().then(data=>{
-                   // console.log(data);
+                   
                     alert("Organizacija vec postoji u bazi");
                 
                 });
@@ -1847,7 +1804,7 @@ ProveriOrganizaciju(naziv)
         else {
             if (s.status == 202) {
                 s.json().then(data=>{
-                   // console.log(data);
+                   
                     alert("Organizacija vec postoji u bazi");
                 
                 });

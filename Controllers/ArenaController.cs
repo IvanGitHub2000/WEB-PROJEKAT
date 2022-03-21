@@ -48,7 +48,7 @@ namespace WEB_PROJEKAT.Controllers
              try
              {
             Context.Arene.Add(arena);
-            await Context.SaveChangesAsync();// da bi se dodalo u bazu
+            await Context.SaveChangesAsync();
              return Ok($"Dodata je arena ciji je ID={arena.ID}, sa imenom: {arena.Ime},kapacitetom:{arena.Kapacitet},iz drzave:{arena.Drzava}"
              + $"PAZNJA:Potrebne Covid propusnice:{arena.PotrebnaCovidPropusnica}");
              }
@@ -60,42 +60,8 @@ namespace WEB_PROJEKAT.Controllers
              
         }
             #endregion
-          /*  #region DODAJ_ARENU
-        [Route("DodajArenuOrganizaciji/{ime}/{drzava}/{kapacitet}/{potrebnaCovid}/{idorg}")]
-        [HttpPost]
-        public async Task<ActionResult> DodajArenuOrganizaciji(string ime,string drzava,string kapacitet,string potrebnaCovid,string idorg)
-        {
-            int idOrganizacije=Int32.Parse(idorg);
-          if(idOrganizacije<0)
-          return BadRequest("Greska kod id!!!");
-             try
-             {
-                 var arena= await Context.Arene.Include(p=>p.Organizacija).Where(p=>p.ID>0).ToListAsync();
-                
-
-                // Arena arena=new Arena();
-
-                 arena.Ime=ime;
-                 arena.Drzava=drzava;
-                 arena.Kapacitet=Int32.Parse(kapacitet);
-                 arena.PotrebnaCovidPropusnica=Boolean.Parse(potrebnaCovid);
-                 arena.Organizacija.ID=idOrganizacije;
-          
-                 Context.Arene.Add(arena);
-                 await Context.SaveChangesAsync();
-                 return Ok();
-           
-             }
-             catch(Exception e)
-             {
-                 return BadRequest(e.Message);
-             }
-            
-             
-        }
-        #endregion*/
-         
-            #region IZMENI_ARENU
+        
+         #region IZMENI_ARENU
             [Route("PreuzmiArenice/{kap}")]
             [HttpPut]
           public async Task<ActionResult> PreuzmiArenice(string kap)
@@ -135,29 +101,24 @@ namespace WEB_PROJEKAT.Controllers
               }
           }
           #endregion
+          
+        #region ODSTAMPAJ_ARENE
           [Route("OdstampajArene/{proba}")]
             [HttpPut]
           public async Task<ActionResult> OdstampajArene(int proba)
-          {//menja se da li su potrebne propusnice ili ne
-             /* if(string.IsNullOrWhiteSpace(imeArene)||imeArene.Length>20)
-              {
-                  return BadRequest("Greska prilikom unosa imena arene koju zelite da izmenite");
-              }*/
-              
-
+          {
               
               try
               {
                   var zaMenjanje= await Context.Arene.Where(p=>p.Kapacitet>proba).ToListAsync();
                  
-                  //zaMenjanje.PotrebnaCovidPropusnica=true;
+                 
                  
                   await Context.SaveChangesAsync();
                   return Ok(
                       zaMenjanje.Select(p=>
                       new
-                      {
-                                
+                      {      
                                 ime=p.Ime,
                                 drzava=p.Drzava,
                                 kapacitet=p.Kapacitet,
@@ -171,22 +132,9 @@ namespace WEB_PROJEKAT.Controllers
                   return BadRequest(e.Message);
               }
               }
+              #endregion
               
-              
-          
-/*[Route("PreuzmiArenu")]
-[HttpGet]
-public async Task<List<Models.Arena>> PreuzmiArenu1()x
-{   
-
-var f= await Context.Arene.Include(p=>p.Organizacija).ToListAsync();
-return (f);
-
-
-
-  
-        
-    }*/
+             
    #region get_arenu
 [Route("PreuzmiArenuPoIDOrganizacije")]
 [HttpGet]
@@ -204,6 +152,8 @@ return Ok(await Context.Arene.Select(p=>
     }).ToListAsync());
 }
  #endregion
+
+#region preuzmiarenupoMax
 [Route("PreuzmiArenePoMax/{birajArenu}")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiArenePoMax(int birajArenu)
@@ -230,8 +180,9 @@ catch(Exception e)
     return BadRequest(e.Message);
 }
     }
+#endregion
 
-
+#region ObrisiArenuSaNedovoljnimKap
 [Route("ObrisiAreneSaNedovoljnimKapacitetom/{kap}")]
 [HttpDelete]
 public async Task<ActionResult> ObrisiAreneSaNedovoljnimKapacitetom(string kap)
@@ -267,6 +218,8 @@ catch(Exception e)
     return BadRequest(e.Message);
 }
     }
+    #endregion
+ 
   #region IZMENI_ARENU_COVID
             [Route("IzmeniArenuCovid/{ime}")]//sa select box dobijas info o ovome
             [HttpPut]
@@ -302,7 +255,9 @@ catch(Exception e)
               }
           }
           #endregion
-          [Route("PreuzmiAreneStubic")]
+         
+       #region PreuzmiAreneStubic
+ [Route("PreuzmiAreneStubic")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiAreneStubic()
 {
@@ -331,5 +286,5 @@ catch(Exception e)
     }
     }
 }
-    
+    #endregion
 

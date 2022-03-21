@@ -181,11 +181,12 @@ var sve=Context.Organizacije;
     
     var j=await sve.Where(p=>p.VrednostOrganizacijeUMilionimaDolara==max).ToListAsync();
     var l=j.FirstOrDefault();
-    /*return Ok("Organizacija sa najvecim budzetom je pronadjena.Njeno ime je:" +l.Ime + "Osnivac je:" + l.Osnivac + "i njena vrednost je"
-        + l.VrednostOrganizacijeUMilionimaDolara + "miliona dolara.");*/
+   
         return Ok(l);
     }
 #endregion
+ 
+  #region PreuzmiOrgReal
   [Route("PreuzmiOrganizacije")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiOrg()
@@ -213,8 +214,9 @@ return Ok(
     }
 
     }
+    #endregion
 
-    
+    #region MinBudget
     [Route("PreuzmiOrganizacijuSaNajmanjimBudxetom")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiOrgMin()
@@ -280,6 +282,7 @@ return Ok(sve.VrednostOrganizacijeUMilionimaDolara);
            }
 
        }
+       #endregion
 
 #region POMOGNI_ORGANIZACIJAMA
             [Route("PomocOrganizacijama/{ime}")]//sa select box dobijas info o ovome
@@ -298,7 +301,7 @@ return Ok(sve.VrednostOrganizacijeUMilionimaDolara);
 
                 if(zaMenjanje!=null)
                 {
-                    //int pomoc=zaMenjanje.VrednostOrganizacijeUMilionimaDolara/10;
+                    
 
                 zaMenjanje.VrednostOrganizacijeUMilionimaDolara+=zaMenjanje.VrednostOrganizacijeUMilionimaDolara/10;
                 }
@@ -318,7 +321,8 @@ return Ok(sve.VrednostOrganizacijeUMilionimaDolara);
               }
           }
           #endregion
-            [Route("PreuzmiOrganizacijeStubic")]
+ #region PreuzmiOrgStubic
+ [Route("PreuzmiOrganizacijeStubic")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiOrganizacijeStubic()
 {
@@ -345,7 +349,7 @@ catch(Exception e)
     return BadRequest(e.Message);
 }
     }
-
+#endregion
     }  
     }
 

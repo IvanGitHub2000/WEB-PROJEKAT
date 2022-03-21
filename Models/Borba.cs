@@ -32,10 +32,10 @@ namespace Models
     [Range(1,50000)]
      public int NovcanaNagradaUHiljadamaDolara { get; set; }
 
-        [JsonIgnore]
-        public List<Borac> Borci{get;set;}
+   [JsonIgnore]
+    public List<Borac> Borci{get;set;}
 
-       public Arena Arena{get;set;}
+    public Arena Arena{get;set;}
      
     }
 }

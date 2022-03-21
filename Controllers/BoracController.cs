@@ -25,13 +25,10 @@ namespace WEB_PROJEKAT.Controllers
         [HttpGet]
         public async Task<ActionResult> Preuzmi(/*int id*/)
         {      
-            /*var fighteri = Context.Borci
-                          .Include(p=>p.Borba)
-                         .ThenInclude(p=>p.Arena)
-                         .ThenInclude(p=>p.Organizacija);*///VAZNO!!! sa theninclude ides dublje po nivoima, a include prvi nivo ispod osnovnog, u ovom slucaju osnovni nivo je BORAC!!!
+           
                          int KO=50;
-                         var fighter= await Context.Borci.Where(p=>p.KnockoutRatio>KO).ToListAsync();// VAZNO!!! Sa ovim vracas samo jednog, a ne sve borce!!!!!
-                          //return Ok(fighter);
+                         var fighter= await Context.Borci.Where(p=>p.KnockoutRatio>KO).ToListAsync();
+                         
                           if(fighter==null){return BadRequest("Greska!!!");}
                           return Ok(fighter.Select(p=>
                             new{
@@ -39,41 +36,12 @@ namespace WEB_PROJEKAT.Controllers
                                    ime=p.Ime,
                                     prezime=p.Prezime,
                                    kategorija=p.Kategorija,
-                                 //  ranking=p.Ranking,
                                    brojPobeda=p.BrojPobeda,
                                    brojPoraza=p.BrojPoraza,
                                    knockoutRatio=p.KnockoutRatio   
                                    }).ToList());
                           
-            ///var fighter=Context.Borci
-         //   .Include(p=>p.Borba);
-           // .ThenInclude(p=>p.Arena);
-          /*int maxKo=0;
-          string max;
-          foreach(var v in Context.Borci)
-          {
-              int k=v.KnockoutRatio;
-              if(maxKo<k)
-              {   var BoracSaMaxKoRatio=v;
-                   max=BoracSaMaxKoRatio.Ime + " " + BoracSaMaxKoRatio.Prezime;
-                  maxKo=k;//vraca maxKO
-              }
-              
-          }*/
-          
-
-
-           // return Ok($"Max ko ratio ima {BoracSaMax}");
-         /*  var fighter=Context.Borci.Where(p=>p.ID==id).FirstOrDefault();
-            
-            if(fighter!=null)
-            {
-               return Ok(Context.Borci.Where(p=>p.ID==id).FirstOrDefault());
-            }
-            else
-            {
-                return BadRequest("Borac nije pronadjen!");
-            }*/
+           
         }
         #endregion
 
@@ -102,7 +70,7 @@ namespace WEB_PROJEKAT.Controllers
              try
              {
             Context.Borci.Add(borac);
-            await Context.SaveChangesAsync();// da bi se dodalo u bazu
+            await Context.SaveChangesAsync();
              return Ok($"Dodat je borac ciji je ID={borac.ID}");
              }
              catch(Exception e)
@@ -143,12 +111,12 @@ namespace WEB_PROJEKAT.Controllers
              }
              try
              {   
-               // var fighter=Context.Borci.Where(p=>p.KnockoutRatio==knockoutRatio && p.Ime==ime && p.Prezime==prezime).FirstOrDefault();
+               
                var fighter=Context.Borci.Where(p=>p.Ime==ime && p.Prezime==prezime).FirstOrDefault();
 
                if(fighter!=null)
                {
-                //fighter.KnockoutRatio=knockoutRatio;
+               
                 fighter.BrojPobeda=brojPobeda1;
                 fighter.BrojPoraza=brojPoraza1;
                 fighter.Ranking=ranking1;
@@ -232,42 +200,15 @@ return Ok(await Context.Borci.Select(p=>
     }).ToListAsync());
 }
     #endregion
+    #region PreuzmiBorcaByall
     [Route("PreuzmiBorcaByAll/{id}/{nizPobednika}")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiBorcaByAll(string id,string nizPobednika)
 {   
     try{
-/*var borbaIds=nizBorbi.Split(' ')
-.Where(x=> int.TryParse(x,out _))
-.Select(int.Parse)
-.ToList();*/
+
 int id1=Int32.Parse(id);
 string[] tokens = nizPobednika.Split(',');
-/* var nizBorbi1=nizBorbi.Split("")
-.Where(x=>int.TryParse(x,out _))
-.Select(int.Parse)
-.ToList();
-
-var borci=Context.Borci
-.Include(p=>p.Borba)
-.ThenInclude(p=>p.Arena)
-.ThenInclude(p=>p.Organizacija)
-.Where(p=>p.Borba.Arena.ID==arenaId && nizBorbi1.Contains(p.Borba.Arena.ID)); */
-
-// borci1.Select(p=>
-//     new
-//     {
-//       ime=p.Ime,
-//       prezime=p.Prezime,
-//       pobednik=p.Borba.Pobednik
-     
-//      /* pobednik=borba.Select(q=>
-//       new
-//       {
-//          pobednik=q.Arena.Ime
-//       })*/
-      
-//     }).ToList()
       
 var borci=Context.Borbe
 .Where(a=>a.Arena.ID==id1 && tokens.Contains(a.Pobednik));
@@ -292,7 +233,7 @@ catch(Exception e)
     return BadRequest(e.Message);
 }
     }
-    
+    #endregion
 
       #region get_borca_by_id
 [Route("PreuzmiBorcaByKat/{kat}")]
@@ -309,7 +250,7 @@ var za=await Context.Borci.Where(p=>p.Kategorija==kat).ToListAsync();
 if(za!=null){
 return Ok(za.Select(p=>
     new{
-       // id=p.Borba.ID,
+       
         id=p.ID,
         ime=p.Ime,
         prezime=p.Prezime,
@@ -324,6 +265,7 @@ else{
 }
 }
     #endregion
+    #region PreuzmiBoracStubic
     [Route("PreuzmiBoracStubic")]
     [HttpGet]
 public async Task<ActionResult> PreuzmiBoracStubic()
@@ -348,5 +290,6 @@ catch(Exception e)
     return BadRequest(e.Message);
 }
     } 
+    #endregion
 }
 }

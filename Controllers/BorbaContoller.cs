@@ -21,7 +21,7 @@ namespace WEB_PROJEKAT.Controllers
             Context=context;
 
         }
-// rade i izmeni_borbu i dodaj_borbu
+
         #region  IZMENI_BORBU
         [Route("Izmeni Borbu/{ko1}/{ko2}")]
         [HttpPut]
@@ -161,7 +161,7 @@ return Ok(await Context.Borbe.Select(p=>
     }).ToListAsync());
 }
 #endregion
-
+#region OdstampajBorbeNagrade
           [Route("OdstampajBorbe/{nagradaB}")]
             [HttpPut]
           public async Task<ActionResult> OdstampajArene(int nagradaB)
@@ -196,7 +196,7 @@ return Ok(await Context.Borbe.Select(p=>
                   return BadRequest(e.Message);
               }
           }
-
+#endregion
  
 #region BorbeGubitniciSplit
 [Route("PreuzmiGubitnike/{id}/{niz}")]
@@ -239,6 +239,7 @@ catch(Exception e)
 }
     }
     #endregion
+    #region PreuzmiBorbeStubic
     [Route("PreuzmiBorbeStubic")]
 [HttpGet]
 public async Task<ActionResult> PreuzmiBorbeStubic()
@@ -266,5 +267,6 @@ catch(Exception e)
     return BadRequest(e.Message);
 }
     }
+    #endregion
 }
 }
